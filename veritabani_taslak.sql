@@ -8,3 +8,9 @@ CREATE TABLE Kullanicilar (
     AdSoyad NVARCHAR(100),
     Rol NVARCHAR(20) -- Musteri, Restoran
 );
+-- Adres tablosu eklendi, kullanıcılar ile ilişkilendirildi
+CREATE TABLE Adresler (
+    AdresID INT PRIMARY KEY IDENTITY(1,1),
+    KullaniciID INT FOREIGN KEY REFERENCES Kullanicilar(KullaniciID),
+    AdresDetay NVARCHAR(MAX)
+);
