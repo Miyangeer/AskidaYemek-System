@@ -14,3 +14,10 @@ CREATE TABLE Adresler (
     KullaniciID INT FOREIGN KEY REFERENCES Kullanicilar(KullaniciID),
     AdresDetay NVARCHAR(MAX)
 );
+-- Kurye rolü ve Sipariş takip yapısı eklendi
+CREATE TABLE Siparisler (
+    SiparisID INT PRIMARY KEY IDENTITY(1,1),
+    MusteriID INT FOREIGN KEY REFERENCES Kullanicilar(KullaniciID),
+    KuryeID INT FOREIGN KEY REFERENCES Kullanicilar(KullaniciID),
+    Durum NVARCHAR(50)
+);
